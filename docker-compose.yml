@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  streamrecorder:
+    build: .
+    environment:
+      - JOBS=1
+      - JOB1_URL=https://icecast.omroep.nl/radio2-bb-mp3
+      - JOB1_START_TIME=19:13
+      - JOB1_RUNTIME=10
+      - JOB1_OUTPUT_PATH=/out/Radio2
+      - JOB1_FILENAME=Radio2.mp3
+      - JOB1_TIMEZONE=Europe/Amsterdam
+    volumes:
+      - C:/Temp:/out
